@@ -33,6 +33,9 @@ void setup()
   // if needed, stops calling thread until usb device is connected
   UsbHost::waitForConnect();
 
+  // recieve message only from desired transfer (etc. only MIDI, without audio for instruments)
+  UsbHost::setSupportedEndpointType(USB_BM_ATTRIBUTES_XFER_BULK);
+
   // some other setup() stuff
 }
 
